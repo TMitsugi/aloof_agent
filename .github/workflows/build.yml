@@ -1,0 +1,38 @@
+name: C Build & Test
+
+# トリガー: main ブランチへの push / PR、手動実行
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:   # GitHub UI からの手動実行を許可
+
+jobs:
+  build:
+    name: Build and Test
+    runs-on: ubuntu-latest
+
+    steps:
+      # ステップ 1: リポジトリのソースコードをチェックアウト
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # ステップ 2: コンパイラのバージョンを表示
+      - name: Show compiler version
+        run: gcc --version
+
+      # ステップ 3: make でビルド
+      - name: Build
+        run: make
+
+      # ステップ 4: テストを実行
+      - name: Run tests
+        run: make test
+
+      # ステップ 5: ビルド成果物をアップロード
+      # - name: Upload artifact
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: demo-binary
+      #     path: build/demo

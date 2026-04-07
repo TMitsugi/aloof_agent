@@ -1,13 +1,6 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-#include <stdio.h>
-#include <string.h>
-#include <sys/select.h>
-#include <unistd.h>
-#include <poll.h>
-
-int identify_command(const char* command);
-int prompt_loop();
+#include "prompt_loop.h"
 
 #endif

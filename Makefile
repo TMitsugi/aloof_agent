@@ -2,7 +2,7 @@ CC       = gcc
 CFLAGS   = -Wall -Wextra -O2
 INCLUDES = -I./include
 
-SRC      = ./src/main.c
+SRC      = $(wildcard ./src/*.c)
 OBJ      = $(SRC:.c=.o)
 TARGET   = main
 

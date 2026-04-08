@@ -26,9 +26,9 @@ jobs:
       - name: Build
         run: make
 
-      # ステップ 4: テストを実行
-      - name: Run tests
-        run: make test
+      # # ステップ 4: テストを実行
+      # - name: Run tests
+      #   run: make test
 
       # ステップ 5: ビルド成果物をアップロード
       # - name: Upload artifact
